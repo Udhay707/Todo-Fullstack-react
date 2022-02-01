@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import LoginComp from './Component/login/LoginComp';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import Welcome from './Component/welcomeTodo/Welcome';
+import ErrorComp from './Component/error/ErrorComp';
+import Navbarr from './Component/navbar/Navbarr';
+import AuthenticatedRoute from './Component/login/AuthenticatedRoute';
+import Edit from './Component/edit/Edit'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <BrowserRouter>
+      <Navbarr />
+      <Routes>
+        <Route path="/" exact element={<LoginComp />} />
+        <Route path="/home/:username" element={
+                                                <AuthenticatedRoute>
+                                                      <Welcome />
+                                                </AuthenticatedRoute>    
+                                               } />
+        <Route path="/home/:username/:id" element={
+                                                  <AuthenticatedRoute>
+                                                      <Edit />
+                                                  </AuthenticatedRoute>
+                                                  } />
+        <Route path="*" element={<ErrorComp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
