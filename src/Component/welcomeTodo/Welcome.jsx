@@ -119,7 +119,7 @@ const Welcome = () => {
       </tbody>
     </Table>
     <Link to={`/home/${userName}/-1`}>
-      <Button className="margin" variant="success">Add</Button>
+      <Button className="margin-add" variant="success">Add</Button>
     </Link>
   </div>;
 };

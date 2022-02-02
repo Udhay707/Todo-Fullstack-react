@@ -17,7 +17,7 @@
     margin: 2% auto !important;
 }
 .margin{
-        margin-left: 20%;
+        margin-left: 9%;
 }
 
 h2{
@@ -34,4 +34,7 @@ h2{
     margin-left: 31%;
     color: red;
     font-size: 176%;
+}
+.margin-add{
+    margin-left: 20%
 }
