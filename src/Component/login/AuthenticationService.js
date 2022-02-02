@@ -1,5 +1,5 @@
 import axios from "axios"
-import { AUTHENTICATEDUSER } from "./constant/constants"
+import { AUTHENTICATEDUSER, URL } from "./constant/constants"
 
 class Authentication{
 
@@ -13,7 +13,7 @@ class Authentication{
         })
     }
     executeJWTAuth(username, password){
-        return axios.post("http://localhost:8080/authenticate",
+        return axios.post(`${URL}/authenticate`,
         {
             username: username,
             password: password
